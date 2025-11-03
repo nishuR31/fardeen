@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Threat Analytics Hub - Women Safety Analytics</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="module"
+      src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fwomensafe3398back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9"
+    ></script>
+    <script
+      type="module"
+      src="https://static.rocket.new/rocket-shot.js?v=0.0.1"
+    ></script>
+  </head>
+  <body class="bg-slate-900 text-slate-100 min-h-screen">
+    <!-- Header Section -->
+    <header class="bg-slate-800 border-b border-slate-700 px-6 py-4">
+      <div class="flex items-center justify-between">
+        <!-- Logo and Title -->
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-2">
+            <svg
+              class="w-8 h-8 text-emerald-500"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.9 1 3 1.9 3 3V21C3 22.1 3.9 23 5 23H19C20.1 23 21 22.1 21 21V9H21ZM19 21H5V3H13V9H19V21Z"
+              />
+            </svg>
+            <h1 class="text-xl font-semibold text-slate-100">
+              Women Safety Analytics
+            </h1>
+          </div>
+          <div class="h-6 w-px bg-slate-600"></div>
+          <h2 class="text-lg font-medium text-blue-400">
+            Threat Analytics Hub
+          </h2>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="hidden md:flex items-center space-x-6">
+          <a
+            href="live_safety_monitor.html"
+            class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
+            >Live Monitor</a
+          >
+          <a
+            href="threat_analytics_hub.html"
+            class="px-3 py-2 rounded-md bg-blue-600 text-white font-medium"
+            >Analytics Hub</a
+          >
+          <a
+            href="emergency_response.html"
+            class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
+            >Emergency Response</a
+          >
+        </nav>
+
+        <!-- Advanced Filtering Controls -->
+        <div class="flex items-center space-x-4">
+          <!-- Date Range Picker -->
+          <div class="flex items-center space-x-2">
+            <label class="text-sm text-slate-400">Period:</label>
+            <select
+              title="select"
+              class="bg-slate-700 border border-slate-600 rounded-md px-3 py-2 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option>Last 7 Days</option>
+              <option>Last 30 Days</option>
+              <option>Last 3 Months</option>
+              <option>Custom Range</option>
+            </select>
+          </div>
+
+          <!-- Location Multi-select -->
+          <div class="flex items-center space-x-2">
+            <label class="text-sm text-slate-400">Location:</label>
+            <select
+              title="select"
+              class="bg-slate-700 border border-slate-600 rounded-md px-3 py-2 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option>All Locations</option>
+              <option>Downtown Campus</option>
+              <option>North District</option>
+              <option>Central Plaza</option>
+              <option>University Area</option>
+            </select>
+          </div>
+
+          <!-- Threat Severity Toggle -->
+          <div class="flex items-center space-x-2">
+            <label class="text-sm text-slate-400">Severity:</label>
+            <div class="flex items-center space-x-1">
+              <button
+                title="button"
+                class="px-2 py-1 text-xs rounded bg-emerald-600 text-white"
+              >
+                Low
+              </button>
+              <button
+                title="button"
+                class="px-2 py-1 text-xs rounded bg-amber-600 text-white"
+              >
+                Med
+              </button>
+              <button
+                title="button"
+                class="px-2 py-1 text-xs rounded bg-red-600 text-white"
+              >
+                High
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button
+            title="button"
+            class="md:hidden p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-700"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <nav class="md:hidden mt-4 pt-4 border-t border-slate-700">
+        <div class="flex space-x-4">
+          <a
+            href="live_safety_monitor.html"
+            class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-700 text-sm transition-colors"
+            >Live Monitor</a
+          >
+          <a
+            href="threat_analytics_hub.html"
+            class="px-3 py-2 rounded-md bg-blue-600 text-white text-sm font-medium"
+            >Analytics</a
+          >
+          <a
+            href="emergency_response.html"
+            class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-700 text-sm transition-colors"
+            >Emergency</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Analytics Content -->
+    <main class="p-6">
+      <!-- Primary KPI Row -->
+      <section
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6"
+      >
+        <!-- Safety Score Card -->
+        <div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-2">
+              <svg
+                class="w-5 h-5 text-emerald-500"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"
+                />
+              </svg>
+              <h3 class="text-sm font-medium text-slate-300">Safety Score</h3>
+            </div>
+            <div class="flex items-center space-x-1 text-xs text-emerald-400">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7,14L12,9L17,14H7Z" />
+              </svg>
+              <span>+2.3%</span>
+            </div>
+          </div>
+          <div class="text-3xl font-bold text-slate-100 mb-2" id="safetyScore">
+            87.4
+          </div>
+          <div class="text-xs text-slate-400">Out of 100 points</div>
+          <div class="mt-4 w-full bg-slate-700 rounded-full h-2">
+            <div
+              class="bg-emerald-500 h-2 rounded-full transition-all duration-1000 ease-out"
+              style="width: 87.4%"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Incident Count Card -->
+        <div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-2">
+              <svg
+                class="w-5 h-5 text-amber-500"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M13,14H11V10H13M13,18H11V16H13M1,21H23L12,2L1,21Z" />
+              </svg>
+              <h3 class="text-sm font-medium text-slate-300">Incidents</h3>
+            </div>
+            <div class="flex items-center space-x-1 text-xs text-red-400">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17,14L12,19L7,14H17Z" />
+              </svg>
+              <span>-12%</span>
+            </div>
+          </div>
+          <div
+            class="text-3xl font-bold text-slate-100 mb-2"
+            id="incidentCount"
+          >
+            23
+          </div>
+          <div class="text-xs text-slate-400">This week</div>
+          <div class="mt-4 flex items-center space-x-2">
+            <div class="flex-1 bg-slate-700 rounded-full h-2">
+              <div
+                class="bg-amber-500 h-2 rounded-full transition-all duration-1000 ease-out"
+                style="width: 35%"
+              ></div>
+            </div>
+            <span class="text-xs text-slate-400">35% resolved</span>
+          </div>
+        </div>
+
+        <!-- Response Time Card -->
+        <div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-2">
+              <svg
+                class="w-5 h-5 text-blue-500"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"
+                />
+              </svg>
+              <h3 class="text-sm font-medium text-slate-300">Avg Response</h3>
+            </div>
+            <div class="flex items-center space-x-1 text-xs text-emerald-400">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7,14L12,9L17,14H7Z" />
+              </svg>
+              <span>-18s</span>
+            </div>
+          </div>
+          <div class="text-3xl font-bold text-slate-100 mb-2" id="responseTime">
+            1:42
+          </div>
+          <div class="text-xs text-slate-400">Minutes</div>
+          <div class="mt-4 text-xs text-emerald-400">Target: < 2:00 min</div>
+        </div>
+
+        <!-- Anomaly Detection Card -->
+        <div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-2">
+              <svg
+                class="w-5 h-5 text-purple-500"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"
+                />
+              </svg>
+              <h3 class="text-sm font-medium text-slate-300">AI Detection</h3>
+            </div>
+            <div class="flex items-center space-x-1 text-xs text-emerald-400">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7,14L12,9L17,14H7Z" />
+              </svg>
+              <span>+5.2%</span>
+            </div>
+          </div>
+          <div
+            class="text-3xl font-bold text-slate-100 mb-2"
+            id="detectionRate"
+          >
+            94.7%
+          </div>
+          <div class="text-xs text-slate-400">Accuracy rate</div>
+          <div class="mt-4 flex items-center space-x-2">
+            <div
+              class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"
+            ></div>
+            <span class="text-xs text-emerald-400">AI Active</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Analytics Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Main Visualization Area (8 cols) -->
+        <section class="lg:col-span-8 space-y-6">
+          <!-- Threat Level Trends Chart -->
+          <div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-lg font-semibold text-slate-100">
+                Threat Level Trends
+              </h3>
+              <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2 text-sm">
+                  <button
+                    title="button"
+                    class="px-3 py-1 rounded bg-blue-600 text-white text-xs"
+                  >
+                    Threat Level
+                  </button>
+                  <button
+                    title="button"
+                    class="px-3 py-1 rounded bg-slate-600 hover:bg-slate-500 text-white text-xs transition-colors"
+                  >
+                    Crowd Density
+                  </button>
+                  <button
+                    title="button"
+                    class="px-3 py-1 rounded bg-slate-600 hover:bg-slate-500 text-white text-xs transition-colors"
+                  >
+                    Incidents
+                  </button>
+                </div>
+                <button
+                  title="button"
+                  class="text-slate-400 hover:text-slate-200 transition-colors"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Chart Container -->
+            <div
+              class="relative h-80 bg-slate-900 rounded-lg p-4"
+              id="threatTrendsChart"
+            >
+              <!-- SVG Chart -->
+              <svg
+                class="w-full h-full"
+                viewBox="0 0 800 300"
+                aria-label="Threat level trends over time showing safety patterns and incident correlations"
+              >
+                <!-- Grid Lines -->
+                <defs>
+                  <pattern
+                    id="grid"
+                    width="80"
+                    height="30"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <path
+                      d="M 80 0 L 0 0 0 30"
+                      fill="none"
+                      stroke="#334155"
+                      stroke-width="1"
+                      opacity="0.3"
+                    />
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+
+                <!-- Y-axis labels -->
+                <g class="text-xs fill-slate-400">
+                  <text x="20" y="50" text-anchor="middle">High</text>
+                  <text x="20" y="125" text-anchor="middle">Med</text>
+                  <text x="20" y="200" text-anchor="middle">Low</text>
+                  <text x="20" y="275" text-anchor="middle">Safe</text>
+                </g>
+
+                <!-- X-axis labels -->
+                <g class="text-xs fill-slate-400">
+                  <text x="100" y="290" text-anchor="middle">Mon</text>
+                  <text x="200" y="290" text-anchor="middle">Tue</text>
+                  <text x="300" y="290" text-anchor="middle">Wed</text>
+                  <text x="400" y="290" text-anchor="middle">Thu</text>
+                  <text x="500" y="290" text-anchor="middle">Fri</text>
+                  <text x="600" y="290" text-anchor="middle">Sat</text>
+                  <text x="700" y="290" text-anchor="middle">Sun</text>
+                </g>
+
+                <!-- Threat Level Line -->
+                <path
+                  d="M 100 220 L 200 200 L 300 180 L 400 190 L 500 170 L 600 160 L 700 150"
+                  fill="none"
+                  stroke="#3b82f6"
+                  stroke-width="3"
+                  opacity="0.8"
+                />
+
+                <!-- Data Points -->
+                <circle
+                  cx="100"
+                  cy="220"
+                  r="4"
+                  fill="#3b82f6"
+                  class="data-breathing"
+                />
+                <circle
+                  cx="200"
+                  cy="200"
+                  r="4"
+                  fill="#3b82f6"
+                  class="data-breathing"
+                />
+                <circle
+                  cx="300"
+                  cy="180"
+                  r="4"
+                  fill="#3b82f6"
+                  class="data-breathing"
+                />
+                <circle
+                  cx="400"
+                  cy="190"
+                  r="4"
+                  fill="#3b82f6"
+                  class="data-breathing"
+                />
+                <circle
+                  cx="500"
+                  cy="170"
+                  r="4"
+                  fill="#3b82f6"
+                  class="data-breathing"
+                />
+                <circle
+                  cx="600"
+                  cy="160"
+                  r="4"
+                  fill="#3b82f6"
+                  class="data-breathing"
+                />
+                <circle
+                  cx="700"
+                  cy="150"
+                  r="4"
+                  fill="#3b82f6"
+                  class="data-breathing"
+                />
+
+                <!-- Area Fill -->
+                <path
+                  d="M 100 220 L 200 200 L 300 180 L 400 190 L 500 170 L 600 160 L 700 150 L 700 270 L 100 270 Z"
+                  fill="#3b82f6"
+                  opacity="0.1"
+                />
+              </svg>
+
+              <!-- Chart Legend -->
+              <div
+                class="absolute top-4 right-4 bg-slate-800 rounded-lg p-3 border border-slate-600"
+              >
+                <div class="flex items-center space-x-4 text-xs">
+                  <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                    <span class="text-slate-300">Threat Level</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <div
+                      class="w-3 h-3 bg-emerald-500 rounded-full opacity-50"
+                    ></div>
+                    <span class="text-slate-400">Baseline</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chart Controls -->
+            <div class="mt-4 flex items-center justify-between">
+              <div class="flex items-center space-x-2 text-sm text-slate-400">
+                <span>Zoom:</span>
+                <button
+                  title="button"
+                  class="px-2 py-1 rounded bg-slate-700 hover:bg-slate-600 text-xs transition-colors"
+                >
+                  1D
+                </button>
+                <button
+                  title="button"
+                  class="px-2 py-1 rounded bg-slate-700 hover:bg-slate-600 text-xs transition-colors"
+                >
+                  7D
+                </button>
+                <button
+                  title="button"
+                  class="px-2 py-1 rounded bg-blue-600 text-white text-xs"
+                >
+                  30D
+                </button>
+              </div>
+              <div class="text-xs text-slate-400">
+                Last updated: <span id="chartLastUpdate">2 min ago</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hotspot Mapping Interface -->
+          <div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-lg font-semibold text-slate-100">
+                Geographic Risk Assessment
+              </h3>
+              <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2">
+                  <button
+                    title="button"
+                    class="px-3 py-1 rounded bg-red-600 text-white text-xs"
+                  >
+                    Heat Map
+                  </button>
+                  <button
+                    title="button"
+                    class="px-3 py-1 rounded bg-slate-600 hover:bg-slate-500 text-white text-xs transition-colors"
+                  >
+                    Clusters
+                  </button>
+                  <button
+                    title="button"
+                    class="px-3 py-1 rounded bg-slate-600 hover:bg-slate-500 text-white text-xs transition-colors"
+                  >
+                    Routes
+                  </button>
+                </div>
+                <button
+                  title="button"
+                  class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-md transition-colors"
+                >
+                  Export Map
+                </button>
+              </div>
+            </div>
+
+            <!-- Interactive Map Container -->
+            <div class="relative h-96 bg-slate-900 rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1586036308218-5ed6553c98b6"
+                alt="Geographic heat map showing risk assessment zones with incident clustering and safety hotspots across monitored areas"
+                class="w-full h-full object-cover opacity-60"
+                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+              />
+
+              <!-- Heat Map Overlay -->
+              <div class="absolute inset-0">
+                <!-- High Risk Zone -->
+                <div
+                  class="absolute top-16 left-20 w-24 h-24 bg-red-500 rounded-full opacity-30 animate-pulse"
+                ></div>
+                <div
+                  class="absolute top-20 left-24 w-16 h-16 bg-red-600 rounded-full opacity-50"
+                ></div>
+
+                <!-- Medium Risk Zone -->
+                <div
+                  class="absolute top-32 right-32 w-20 h-20 bg-amber-500 rounded-full opacity-30 animate-pulse"
+                ></div>
+                <div
+                  class="absolute top-36 right-36 w-12 h-12 bg-amber-600 rounded-full opacity-50"
+                ></div>
+
+                <!-- Low Risk Zone -->
+                <div
+                  class="absolute bottom-24 left-32 w-16 h-16 bg-emerald-500 rounded-full opacity-30 animate-pulse"
+                ></div>
+                <div
+                  class="absolute bottom-28 left-36 w-8 h-8 bg-emerald-600 rounded-full opacity-50"
+                ></div>
+              </div>
+
+              <!-- Location Markers -->
+              <div
+                class="absolute top-20 left-28 w-4 h-4 bg-white rounded-full border-2 border-red-500 shadow-lg cursor-pointer"
+                data-tooltip="High Risk: 12 incidents this week"
+              ></div>
+              <div
+                class="absolute top-36 right-40 w-4 h-4 bg-white rounded-full border-2 border-amber-500 shadow-lg cursor-pointer"
+                data-tooltip="Medium Risk: 5 incidents this week"
+              ></div>
+              <div
+                class="absolute bottom-32 left-40 w-4 h-4 bg-white rounded-full border-2 border-emerald-500 shadow-lg cursor-pointer"
+                data-tooltip="Low Risk: 1 incident this week"
+              ></div>
+
+              <!-- Map Controls -->
+              <div class="absolute top-4 right-4 flex flex-col space-y-2">
+                <button
+                  title="button"
+                  class="bg-slate-800 hover:bg-slate-700 text-white p-2 rounded shadow-lg transition-colors"
+                >
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                    ></path>
+                  </svg>
+                </button>
+                <button
+                  title="button"
+                  class="bg-slate-800 hover:bg-slate-700 text-white p-2 rounded shadow-lg transition-colors"
+                >
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M20 12H4"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Map Legend -->
+              <div
+                class="absolute bottom-4 left-4 bg-slate-800 rounded-lg p-3 border border-slate-600"
+              >
+                <div class="text-xs font-medium text-slate-200 mb-2">
+                  Risk Levels
+                </div>
+                <div class="space-y-1">
+                  <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <span class="text-xs text-slate-300">High Risk</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 bg-amber-500 rounded-full"></div>
+                    <span class="text-xs text-slate-300">Medium Risk</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 bg-emerald-500 rounded-full"></div>
+                    <span class="text-xs text-slate-300">Low Risk</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Right Sidebar (4 cols) -->
+        <section class="lg:col-span-4 space-y-6">
+          <!-- Threat Severity Classification -->
+          <div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+            <h3 class="text-lg font-semibold text-slate-100 mb-6">
+              Threat Classification
+            </h3>
+
+            <!-- Donut Chart Container -->
+            <div class="relative h-48 flex items-center justify-center mb-6">
+              <svg
+                class="w-40 h-40"
+                viewBox="0 0 160 160"
+                aria-label="Donut chart showing threat severity distribution with percentages for high, medium, and low risk categories"
+              >
+                <!-- Donut Chart Segments -->
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="60"
+                  fill="none"
+                  stroke="#ef4444"
+                  stroke-width="20"
+                  stroke-dasharray="37.7 377"
+                  stroke-dashoffset="0"
+                  opacity="0.8"
+                />
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="60"
+                  fill="none"
+                  stroke="#f59e0b"
+                  stroke-width="20"
+                  stroke-dasharray="75.4 377"
+                  stroke-dashoffset="-37.7"
+                  opacity="0.8"
+                />
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="60"
+                  fill="none"
+                  stroke="#10b981"
+                  stroke-width="20"
+                  stroke-dasharray="264.6 377"
+                  stroke-dashoffset="-113.1"
+                  opacity="0.8"
+                />
+
+                <!-- Center Text -->
+                <text
+                  x="80"
+                  y="75"
+                  text-anchor="middle"
+                  class="text-2xl font-bold fill-slate-100"
+                >
+                  23
+                </text>
+                <text
+                  x="80"
+                  y="90"
+                  text-anchor="middle"
+                  class="text-xs fill-slate-400"
+                >
+                  Total Threats
+                </text>
+              </svg>
+            </div>
+
+            <!-- Classification Breakdown -->
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                  <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <span class="text-sm text-slate-300">High Severity</span>
+                </div>
+                <div class="text-right">
+                  <div class="text-sm font-semibold text-slate-100">3</div>
+                  <div class="text-xs text-slate-400">13%</div>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                  <div class="w-3 h-3 bg-amber-500 rounded-full"></div>
+                  <span class="text-sm text-slate-300">Medium Severity</span>
+                </div>
+                <div class="text-right">
+                  <div class="text-sm font-semibold text-slate-100">6</div>
+                  <div class="text-xs text-slate-400">26%</div>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                  <div class="w-3 h-3 bg-emerald-500 rounded-full"></div>
+                  <span class="text-sm text-slate-300">Low Severity</span>
+                </div>
+                <div class="text-right">
+                  <div class="text-sm font-semibold text-slate-100">14</div>
+                  <div class="text-xs text-slate-400">61%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Incident History Table -->
+          <div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-lg font-semibold text-slate-100">
+                Recent Incidents
+              </h3>
+              <button
+                title="button"
+                class="text-sm text-blue-400 hover:text-blue-300 transition-colors"
+              >
+                View All
+              </button>
+            </div>
+
+            <!-- Scrollable Incident List -->
+            <div class="space-y-3 max-h-80 overflow-y-auto">
+              <!-- Incident Item 1 -->
+              <div
+                class="bg-slate-900 rounded-lg p-3 border-l-4 border-red-500 cursor-pointer hover:bg-slate-700 transition-colors"
+              >
+                <div class="flex items-start justify-between mb-2">
+                  <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                    <span class="text-sm font-medium text-slate-200"
+                      >Suspicious Activity</span
+                    >
+                  </div>
+                  <span class="text-xs text-slate-400">2:34 PM</span>
+                </div>
+                <p class="text-xs text-slate-400 mb-2">
+                  Unusual crowd gathering detected at Main Entrance
+                </p>
+                <div class="flex items-center justify-between">
+                  <span
+                    class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-red-100 text-red-800"
+                  >
+                    High Priority
+                  </span>
+                  <span class="text-xs text-slate-500">Downtown Campus</span>
+                </div>
+              </div>
+
+              <!-- Incident Item 2 -->
+              <div
+                class="bg-slate-900 rounded-lg p-3 border-l-4 border-amber-500 cursor-pointer hover:bg-slate-700 transition-colors"
+              >
+                <div class="flex items-start justify-between mb-2">
+                  <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                    <span class="text-sm font-medium text-slate-200"
+                      >Equipment Malfunction</span
+                    >
+                  </div>
+                  <span class="text-xs text-slate-400">1:15 PM</span>
+                </div>
+                <p class="text-xs text-slate-400 mb-2">
+                  Camera CAM-07 experiencing connectivity issues
+                </p>
+                <div class="flex items-center justify-between">
+                  <span
+                    class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-amber-100 text-amber-800"
+                  >
+                    Medium Priority
+                  </span>
+                  <span class="text-xs text-slate-500">North District</span>
+                </div>
+              </div>
+
+              <!-- Incident Item 3 -->
+              <div
+                class="bg-slate-900 rounded-lg p-3 border-l-4 border-emerald-500 cursor-pointer hover:bg-slate-700 transition-colors"
+              >
+                <div class="flex items-start justify-between mb-2">
+                  <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                    <span class="text-sm font-medium text-slate-200"
+                      >Safety Check Complete</span
+                    >
+                  </div>
+                  <span class="text-xs text-slate-400">12:45 PM</span>
+                </div>
+                <p class="text-xs text-slate-400 mb-2">
+                  Routine safety patrol completed successfully
+                </p>
+                <div class="flex items-center justify-between">
+                  <span
+                    class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-emerald-100 text-emerald-800"
+                  >
+                    Low Priority
+                  </span>
+                  <span class="text-xs text-slate-500">Central Plaza</span>
+                </div>
+              </div>
+
+              <!-- Incident Item 4 -->
+              <div
+                class="bg-slate-900 rounded-lg p-3 border-l-4 border-blue-500 cursor-pointer hover:bg-slate-700 transition-colors"
+              >
+                <div class="flex items-start justify-between mb-2">
+                  <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span class="text-sm font-medium text-slate-200"
+                      >System Update</span
+                    >
+                  </div>
+                  <span class="text-xs text-slate-400">11:30 AM</span>
+                </div>
+                <p class="text-xs text-slate-400 mb-2">
+                  AI detection algorithms updated to v2.1.3
+                </p>
+                <div class="flex items-center justify-between">
+                  <span
+                    class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800"
+                  >
+                    Info
+                  </span>
+                  <span class="text-xs text-slate-500">System Wide</span>
+                </div>
+              </div>
+
+              <!-- Incident Item 5 -->
+              <div
+                class="bg-slate-900 rounded-lg p-3 border-l-4 border-amber-500 cursor-pointer hover:bg-slate-700 transition-colors"
+              >
+                <div class="flex items-start justify-between mb-2">
+                  <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                    <span class="text-sm font-medium text-slate-200"
+                      >Crowd Density Alert</span
+                    >
+                  </div>
+                  <span class="text-xs text-slate-400">10:22 AM</span>
+                </div>
+                <p class="text-xs text-slate-400 mb-2">
+                  High crowd density detected in Library Corridor
+                </p>
+                <div class="flex items-center justify-between">
+                  <span
+                    class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-amber-100 text-amber-800"
+                  >
+                    Medium Priority
+                  </span>
+                  <span class="text-xs text-slate-500">University Area</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions Panel -->
+          <div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+            <h3 class="text-lg font-semibold text-slate-100 mb-4">
+              Quick Actions
+            </h3>
+
+            <div class="space-y-3">
+              <button
+                title="button"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-md transition-colors flex items-center justify-center space-x-2"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  ></path>
+                </svg>
+                <span>Generate Report</span>
+              </button>
+
+              <button
+                title="button"
+                class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-4 rounded-md transition-colors flex items-center justify-center space-x-2"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  ></path>
+                </svg>
+                <span>Export Data</span>
+              </button>
+
+              <button
+                title="button"
+                class="w-full bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 px-4 rounded-md transition-colors flex items-center justify-center space-x-2"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+                <span>Create Alert</span>
+              </button>
+
+              <button
+                title="button"
+                class="w-full bg-slate-600 hover:bg-slate-700 text-white font-medium py-3 px-4 rounded-md transition-colors flex items-center justify-center space-x-2"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  ></path>
+                </svg>
+                <span>Settings</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- JavaScript for Real-time Updates and Interactions -->
+    <script>
+      // Simulate real-time data updates
+      function updateAnalytics() {
+        // Update KPI values
+        const safetyScore = (Math.random() * 10 + 85).toFixed(1);
+        const incidentCount = Math.floor(Math.random() * 10) + 20;
+        const responseMinutes = Math.floor(Math.random() * 30) + 90;
+        const responseSeconds = Math.floor(Math.random() * 60);
+        const detectionRate = (Math.random() * 5 + 92).toFixed(1);
+
+        document.getElementById("safetyScore").textContent = safetyScore;
+        document.getElementById("incidentCount").textContent = incidentCount;
+        document.getElementById("responseTime").textContent = `${Math.floor(
+          responseMinutes / 60
+        )}:${String(responseMinutes % 60).padStart(2, "0")}`;
+        document.getElementById("detectionRate").textContent =
+          detectionRate + "%";
+
+        // Update chart timestamp
+        document.getElementById("chartLastUpdate").textContent =
+          Math.floor(Math.random() * 5) + " min ago";
+      }
+
+      // Update analytics every 30 seconds
+      setInterval(updateAnalytics, 30000);
+
+      // Initial update
+      updateAnalytics();
+
+      // Interactive chart overlay buttons
+      document.addEventListener("DOMContentLoaded", function () {
+        const overlayButtons = document.querySelectorAll(
+          ".lg\\:col-span-8 button"
+        );
+        overlayButtons.forEach((button) => {
+          if (
+            button.textContent.includes("Crowd Density") ||
+            button.textContent.includes("Incidents")
+          ) {
+            button.addEventListener("click", function () {
+              // Remove active state from all buttons
+              overlayButtons.forEach((btn) => {
+                if (
+                  btn.textContent.includes("Threat Level") ||
+                  btn.textContent.includes("Crowd Density") ||
+                  btn.textContent.includes("Incidents")
+                ) {
+                  btn.className =
+                    "px-3 py-1 rounded bg-slate-600 hover:bg-slate-500 text-white text-xs transition-colors";
+                }
+              });
+              // Add active state to clicked button
+              this.className =
+                "px-3 py-1 rounded bg-blue-600 text-white text-xs";
+            });
+          }
+        });
+
+        // Map view toggle buttons
+        const mapButtons = document.querySelectorAll(
+          ".bg-red-600, .bg-slate-600"
+        );
+        mapButtons.forEach((button) => {
+          if (
+            button.textContent.includes("Heat Map") ||
+            button.textContent.includes("Clusters") ||
+            button.textContent.includes("Routes")
+          ) {
+            button.addEventListener("click", function () {
+              // Remove active state from map buttons
+              mapButtons.forEach((btn) => {
+                if (
+                  btn.textContent.includes("Heat Map") ||
+                  btn.textContent.includes("Clusters") ||
+                  btn.textContent.includes("Routes")
+                ) {
+                  btn.className =
+                    "px-3 py-1 rounded bg-slate-600 hover:bg-slate-500 text-white text-xs transition-colors";
+                }
+              });
+              // Add active state to clicked button
+              this.className =
+                "px-3 py-1 rounded bg-red-600 text-white text-xs";
+            });
+          }
+        });
+
+        // Incident drill-down functionality
+        const incidentItems = document.querySelectorAll(
+          ".lg\\:col-span-4 .bg-slate-900"
+        );
+        incidentItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            // Add visual feedback for drill-down
+            this.style.transform = "scale(0.98)";
+            setTimeout(() => {
+              this.style.transform = "scale(1)";
+            }, 150);
+          });
+        });
+
+        // Tooltip functionality for map markers
+        const mapMarkers = document.querySelectorAll("[data-tooltip]");
+        mapMarkers.forEach((marker) => {
+          marker.addEventListener("mouseenter", function () {
+            const tooltip = document.createElement("div");
+            tooltip.className =
+              "absolute bg-slate-800 text-white text-xs px-2 py-1 rounded shadow-lg z-50 pointer-events-none";
+            tooltip.textContent = this.getAttribute("data-tooltip");
+            tooltip.style.left = "50%";
+            tooltip.style.bottom = "100%";
+            tooltip.style.transform = "translateX(-50%) translateY(-4px)";
+            this.appendChild(tooltip);
+          });
+
+          marker.addEventListener("mouseleave", function () {
+            const tooltip = this.querySelector(".absolute.bg-slate-800");
+            if (tooltip) {
+              tooltip.remove();
+            }
+          });
+        });
+      });
+    </script>
+    <script
+      id="dhws-dataInjector"
+      src="../public/dhws-data-injector.js"
+    ></script>
+  </body>
+</html>

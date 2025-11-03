@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Color Variables with Tailwind References */
+  --color-primary: #1e293b; /* slate-800 */
+  --color-secondary: #334155; /* slate-700 */
+  --color-accent: #3b82f6; /* blue-500 */
+  --color-background: #0f172a; /* slate-900 */
+  --color-surface: #1e293b; /* slate-800 */
+  --color-text-primary: #f1f5f9; /* slate-100 */
+  --color-text-secondary: #94a3b8; /* slate-400 */
+  --color-success: #10b981; /* emerald-500 */
+  --color-warning: #f59e0b; /* amber-500 */
+  --color-error: #ef4444; /* red-500 */
+  
+  /* Shadow Variables */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.25);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
+  
+  /* Border Variables */
+  --border-subtle: 1px solid rgba(148, 163, 184, 0.2);
+  --border-focus: 1px solid rgba(59, 130, 246, 0.5);
+  
+  /* Animation Variables */
+  --transition-fast: 200ms ease-out;
+  --transition-normal: 300ms ease-out;
+  --animation-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animation-breathing: breathing 3s ease-in-out infinite;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+  }
+  
+  .font-data {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Ambient Data Breathing Animation */
+  @keyframes breathing {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.02); }
+  }
+  
+  .data-breathing {
+    animation: var(--animation-breathing);
+  }
+  
+  /* Contextual Micro-Interactions */
+  .interactive-element {
+    transition: all var(--transition-fast);
+    cursor: pointer;
+  }
+  
+  .interactive-element:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  /* Progressive Information Disclosure */
+  .expandable-card {
+    transition: all var(--transition-normal);
+    overflow: hidden;
+  }
+  
+  .expandable-card.expanded {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Intelligent Status Transitions */
+  .status-indicator {
+    transition: all var(--transition-normal);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+  }
+  
+  .status-safe {
+    background-color: var(--color-success);
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+  }
+  
+  .status-warning {
+    background-color: var(--color-warning);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+  }
+  
+  .status-critical {
+    background-color: var(--color-error);
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+    animation: var(--animation-pulse);
+  }
+  
+  /* Adaptive Alert Hierarchy */
+  .alert-critical {
+    animation: alertPulse 1s ease-in-out infinite;
+    transform: scale(1.05);
+    z-index: 50;
+  }
+  
+  @keyframes alertPulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); }
+    50% { box-shadow: 0 0 30px rgba(239, 68, 68, 0.8); }
+  }
+  
+  /* Spatial Data Layering */
+  .map-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity var(--transition-normal);
+  }
+  
+  .map-layer.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Rhythmic Update Patterns */
+  .update-indicator {
+    position: relative;
+  }
+  
+  .update-indicator::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    opacity: 0;
+    animation: updatePulse 5s ease-in-out infinite;
+  }
+  
+  @keyframes updatePulse {
+    0%, 90%, 100% { opacity: 0; transform: scale(0.8); }
+    5%, 15% { opacity: 1; transform: scale(1.2); }
+  }
+  
+  /* Custom Shadows */
+  .shadow-command {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .shadow-elevated {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .shadow-floating {
+    box-shadow: var(--shadow-xl);
+  }
+  
+  /* Custom Borders */
+  .border-subtle {
+    border: var(--border-subtle);
+  }
+  
+  .border-focus {
+    border: var(--border-focus);
+  }
+  
+  /* Tooltip Styles */
+  .tooltip {
+    position: relative;
+  }
+  
+  .tooltip::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-fast);
+    z-index: 100;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .tooltip:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-4px);
+  }
+}
+
+@layer utilities {
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    .data-breathing,
+    .status-critical,
+    .alert-critical,
+    .update-indicator::after {
+      animation: none;
+    }
+    
+    .interactive-element,
+    .expandable-card,
+    .status-indicator,
+    .map-layer,
+    .tooltip::before {
+      transition: none;
+    }
+  }
+  
+  /* Custom Text Colors */
+  .text-primary-custom {
+    color: var(--color-text-primary);
+  }
+  
+  .text-secondary-custom {
+    color: var(--color-text-secondary);
+  }
+  
+  /* Custom Background Colors */
+  .bg-primary-custom {
+    background-color: var(--color-primary);
+  }
+  
+  .bg-secondary-custom {
+    background-color: var(--color-secondary);
+  }
+  
+  .bg-surface-custom {
+    background-color: var(--color-surface);
+  }
+  
+  .bg-background-custom {
+    background-color: var(--color-background);
+  }
+}

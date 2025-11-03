@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emergency Response - Women Safety Analytics</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="module"
+      src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fwomensafe3398back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9"
+    ></script>
+    <script
+      type="module"
+      src="https://static.rocket.new/rocket-shot.js?v=0.0.1"
+    ></script>
+  </head>
+  <body class="bg-slate-900 text-slate-100 min-h-screen">
+    <!-- Header Section -->
+    <header class="bg-slate-800 border-b border-slate-700 px-6 py-4">
+      <div class="flex items-center justify-between">
+        <!-- Logo and Title -->
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-2">
+            <svg
+              class="w-8 h-8 text-emerald-500"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.9 1 3 1.9 3 3V21C3 22.1 3.9 23 5 23H19C20.1 23 21 22.1 21 21V9H21ZM19 21H5V3H13V9H19V21Z"
+              />
+            </svg>
+            <h1 class="text-xl font-semibold text-slate-100">
+              Women Safety Analytics
+            </h1>
+          </div>
+          <div class="h-6 w-px bg-slate-600"></div>
+          <h2 class="text-lg font-medium text-red-400">Emergency Response</h2>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="hidden md:flex items-center space-x-6">
+          <a
+            href="live_safety_monitor.html"
+            class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
+            >Live Monitor</a
+          >
+          <a
+            href="threat_analytics_hub.html"
+            class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
+            >Analytics Hub</a
+          >
+          <a
+            href="emergency_response.html"
+            class="px-3 py-2 rounded-md bg-red-600 text-white font-medium"
+            >Emergency Response</a
+          >
+        </nav>
+
+        <!-- Emergency Status Indicator -->
+        <div class="flex items-center space-x-4">
+          <!-- Emergency Level -->
+          <div class="flex items-center space-x-2 text-sm">
+            <div
+              class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"
+            ></div>
+            <span class="text-slate-400">Status:</span>
+            <span class="text-emerald-400 font-medium">Normal</span>
+          </div>
+
+          <!-- Response Time -->
+          <div class="text-sm text-slate-400">
+            <span>Avg Response:</span>
+            <span class="text-emerald-400 font-medium">1.8min</span>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button
+            title="button"
+            type="button"
+            class="md:hidden p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-700"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <nav class="md:hidden mt-4 pt-4 border-t border-slate-700">
+        <div class="flex space-x-4">
+          <a
+            href="live_safety_monitor.html"
+            class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-700 text-sm transition-colors"
+            >Live Monitor</a
+          >
+          <a
+            href="threat_analytics_hub.html"
+            class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-700 text-sm transition-colors"
+            >Analytics</a
+          >
+          <a
+            href="emergency_response.html"
+            class="px-3 py-2 rounded-md bg-red-600 text-white text-sm font-medium"
+            >Emergency</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <!-- Priority Alert Banner -->
+    <section
+      class="bg-gradient-to-r from-slate-800 to-slate-700 border-b border-slate-600 px-6 py-4"
+    >
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-2">
+            <div
+              class="w-3 h-3 bg-emerald-500 rounded-full animate-pulse"
+            ></div>
+            <span class="text-lg font-semibold text-slate-100"
+              >System Status: Normal</span
+            >
+          </div>
+          <div class="text-sm text-slate-400">
+            Last Updated: <span id="lastUpdateTime">14:29:18</span>
+          </div>
+        </div>
+        <div class="flex items-center space-x-6">
+          <div class="text-sm">
+            <span class="text-slate-400">Active Incidents:</span>
+            <span
+              class="text-lg font-bold text-slate-100 ml-2"
+              id="activeIncidents"
+              >0</span
+            >
+          </div>
+          <div class="text-sm">
+            <span class="text-slate-400">Response Teams:</span>
+            <span
+              class="text-lg font-bold text-emerald-400 ml-2"
+              id="responseTeams"
+              >8</span
+            >
+          </div>
+          <button
+            title="button"
+            type="button"
+            class="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2 rounded-md transition-colors"
+          >
+            Emergency Broadcast
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Emergency Dashboard -->
+    <main class="p-6">
+      <!-- Dashboard Grid Layout (16 columns) -->
+      <div class="grid grid-cols-1 lg:grid-cols-16 gap-6">
+        <!-- Left Section: Incident Location Mapping (6 cols) -->
+        <section class="lg:col-span-6 space-y-4">
+          <div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-lg font-semibold text-slate-100">
+                Incident Location Map
+              </h3>
+              <div class="flex items-center space-x-2">
+                <button
+                  title="button"
+                  type="button"
+                  class="bg-slate-600 hover:bg-slate-700 text-white text-sm px-3 py-1 rounded transition-colors"
+                >
+                  Refresh
+                </button>
+                <button
+                  title="button"
+                  type="button"
+                  class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-3 py-1 rounded transition-colors"
+                >
+                  Full Screen
+                </button>
+              </div>
+            </div>
+
+            <!-- Interactive Map Area -->
+            <div
+              class="relative bg-slate-900 rounded-lg overflow-hidden aspect-square mb-4"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1626511128733-8744d9e65324"
+                alt="Interactive emergency response map showing downtown area with marked incident locations and response unit positions"
+                class="w-full h-full object-cover"
+                onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;"
+              />
+
+              <!-- Map Overlays -->
+              <div class="absolute inset-0">
+                <!-- Safe Zone Indicator -->
+                <div
+                  class="absolute top-4 left-4 bg-emerald-500 w-4 h-4 rounded-full animate-pulse shadow-status-safe"
+                ></div>
+                <div
+                  class="absolute top-6 left-8 text-xs text-white bg-black bg-opacity-50 px-2 py-1 rounded"
+                >
+                  Safe Zone A
+                </div>
+
+                <!-- Response Unit Position -->
+                <div
+                  class="absolute bottom-8 right-6 bg-blue-500 w-4 h-4 rounded-full animate-pulse"
+                ></div>
+                <div
+                  class="absolute bottom-10 right-10 text-xs text-white bg-black bg-opacity-50 px-2 py-1 rounded"
+                >
+                  Unit R-01
+                </div>
+
+                <!-- Monitoring Point -->
+                <div
+                  class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-amber-500 w-4 h-4 rounded-full animate-pulse"
+                ></div>
+                <div
+                  class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-8 text-xs text-white bg-black bg-opacity-50 px-2 py-1 rounded"
+                >
+                  Monitor Point
+                </div>
+              </div>
+
+              <!-- Map Controls -->
+              <div class="absolute top-4 right-4 flex flex-col space-y-2">
+                <button
+                  title="button"
+                  type="button"
+                  class="bg-slate-700 hover:bg-slate-600 text-white p-2 rounded transition-colors"
+                >
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                    ></path>
+                  </svg>
+                </button>
+                <button
+                  title="button"
+                  type="button"
+                  class="bg-slate-700 hover:bg-slate-600 text-white p-2 rounded transition-colors"
+                >
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M20 12H4"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Location Details -->
+            <div class="space-y-4">
+              <div class="bg-slate-900 rounded-lg p-4">
+                <h4 class="text-sm font-semibold text-slate-200 mb-3">
+                  Current Coordinates
+                </h4>
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <span class="text-slate-400">Latitude:</span>
+                    <span class="text-slate-100 font-mono ml-2" id="currentLat"
+                      >40.7128</span
+                    >
+                  </div>
+                  <div>
+                    <span class="text-slate-400">Longitude:</span>
+                    <span class="text-slate-100 font-mono ml-2" id="currentLng"
+                      >-74.0060</span
+                    >
+                  </div>
+                  <div>
+                    <span class="text-slate-400">Radius:</span>
+                    <span class="text-slate-100 font-mono ml-2">500m</span>
+                  </div>
+                  <div>
+                    <span class="text-slate-400">Zone:</span>
+                    <span class="text-emerald-400 font-medium ml-2">Safe</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Nearest Response Units -->
+              <div class="bg-slate-900 rounded-lg p-4">
+                <h4 class="text-sm font-semibold text-slate-200 mb-3">
+                  Nearest Response Units
+                </h4>
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                      <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      <span class="text-sm text-slate-300">Unit R-01</span>
+                    </div>
+                    <div class="text-sm">
+                      <span class="text-slate-400">ETA:</span>
+                      <span class="text-blue-400 font-medium ml-1">3min</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                      <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                      <span class="text-sm text-slate-300">Unit R-02</span>
+                    </div>
+                    <div class="text-sm">
+                      <span class="text-slate-400">ETA:</span>
+                      <span class="text-emerald-400 font-medium ml-1"
+                        >5min</span
+                      >
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                      <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                      <span class="text-sm text-slate-300">Unit R-03</span>
+                    </div>
+                    <div class="text-sm">
+                      <span class="text-slate-400">ETA:</span>
+                      <span class="text-amber-400 font-medium ml-1">7min</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Center Section: Incident Timeline (6 cols) -->
+        <section class="lg:col-span-6 space-y-4">
+          <div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-lg font-semibold text-slate-100">
+                Real-Time Incident Timeline
+              </h3>
+              <div class="flex items-center space-x-2">
+                <div
+                  class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"
+                ></div>
+                <span class="text-sm text-slate-400">Live Updates</span>
+              </div>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="space-y-4 max-h-96 overflow-y-auto">
+              <!-- Timeline Item 1 -->
+              <div
+                class="flex items-start space-x-4 p-4 bg-slate-900 rounded-lg border-l-4 border-emerald-500"
+              >
+                <div class="flex-shrink-0">
+                  <div
+                    class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-4 h-4 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L18,9.5L16.59,8.09L11,13.67L7.41,10.09L6,11.5L11,16.5Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center justify-between mb-1">
+                    <p class="text-sm font-medium text-slate-200">
+                      System Health Check Complete
+                    </p>
+                    <span class="text-xs text-slate-400">14:29:12</span>
+                  </div>
+                  <p class="text-xs text-slate-400 mb-2">
+                    All monitoring systems operational. No threats detected in
+                    current scan.
+                  </p>
+                  <div class="flex items-center space-x-2">
+                    <span
+                      class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-emerald-100 text-emerald-800"
+                    >
+                      System
+                    </span>
+                    <span class="text-xs text-slate-500"
+                      >Automated Detection</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Timeline Item 2 -->
+              <div
+                class="flex items-start space-x-4 p-4 bg-slate-900 rounded-lg border-l-4 border-blue-500"
+              >
+                <div class="flex-shrink-0">
+                  <div
+                    class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-4 h-4 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12,2A2,2 0 0,1 14,4C14,4.74 13.6,5.39 13,5.73V7H14A7,7 0 0,1 21,14H22A1,1 0 0,1 23,15V18A1,1 0 0,1 22,19H21V20A2,2 0 0,1 19,22H5A2,2 0 0,1 3,20V19H2A1,1 0 0,1 1,18V15A1,1 0 0,1 2,14H3A7,7 0 0,1 10,7H11V5.73C10.4,5.39 10,4.74 10,4A2,2 0 0,1 12,2M7.5,13A2.5,2.5 0 0,0 5,15.5A2.5,2.5 0 0,0 7.5,18A2.5,2.5 0 0,0 10,15.5A2.5,2.5 0 0,0 7.5,13M16.5,13A2.5,2.5 0 0,0 14,15.5A2.5,2.5 0 0,0 16.5,18A2.5,2.5 0 0,0 19,15.5A2.5,2.5 0 0,0 16.5,13Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center justify-between mb-1">
+                    <p class="text-sm font-medium text-slate-200">
+                      Response Team Status Update
+                    </p>
+                    <span class="text-xs text-slate-400">14:27:45</span>
+                  </div>
+                  <p class="text-xs text-slate-400 mb-2">
+                    Unit R-01 completed patrol route. All checkpoints verified
+                    secure.
+                  </p>
+                  <div class="flex items-center space-x-2">
+                    <span
+                      class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800"
+                    >
+                      Team Update
+                    </span>
+                    <span class="text-xs text-slate-500">Unit R-01</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Timeline Item 3 -->
+              <div
+                class="flex items-start space-x-4 p-4 bg-slate-900 rounded-lg border-l-4 border-amber-500"
+              >
+                <div class="flex-shrink-0">
+                  <div
+                    class="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-4 h-4 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M13,14H11V10H13M13,18H11V16H13M1,21H23L12,2L1,21Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center justify-between mb-1">
+                    <p class="text-sm font-medium text-slate-200">
+                      Maintenance Alert
+                    </p>
+                    <span class="text-xs text-slate-400">14:25:18</span>
+                  </div>
+                  <p class="text-xs text-slate-400 mb-2">
+                    Camera CAM-04 requires maintenance. Backup monitoring
+                    activated.
+                  </p>
+                  <div class="flex items-center space-x-2">
+                    <span
+                      class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-amber-100 text-amber-800"
+                    >
+                      Maintenance
+                    </span>
+                    <span class="text-xs text-slate-500">Cafeteria Zone</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Timeline Item 4 -->
+              <div
+                class="flex items-start space-x-4 p-4 bg-slate-900 rounded-lg border-l-4 border-purple-500"
+              >
+                <div class="flex-shrink-0">
+                  <div
+                    class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-4 h-4 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center justify-between mb-1">
+                    <p class="text-sm font-medium text-slate-200">
+                      Witness Report Received
+                    </p>
+                    <span class="text-xs text-slate-400">14:22:33</span>
+                  </div>
+                  <p class="text-xs text-slate-400 mb-2">
+                    Anonymous report: Suspicious activity near parking area.
+                    Investigating.
+                  </p>
+                  <div class="flex items-center space-x-2">
+                    <span
+                      class="inline-flex items-center px-2 py-1 rounded-full text-xs bg-purple-100 text-purple-800"
+                    >
+                      Witness
+                    </span>
+                    <span class="text-xs text-slate-500">Parking Area</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline Controls -->
+            <div
+              class="mt-6 pt-4 border-t border-slate-700 flex items-center justify-between"
+            >
+              <button
+                title="button"
+                type="button"
+                class="text-sm text-slate-400 hover:text-slate-200 transition-colors"
+              >
+                View All History
+              </button>
+              <div class="flex items-center space-x-2">
+                <button
+                  title="button"
+                  type="button"
+                  class="bg-slate-600 hover:bg-slate-700 text-white text-sm px-3 py-1 rounded transition-colors"
+                >
+                  Filter
+                </button>
+                <button
+                  title="button"
+                  type="button"
+                  class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-3 py-1 rounded transition-colors"
+                >
+                  Export
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Right Section: Emergency Contacts & Resources (4 cols) -->
+        <section class="lg:col-span-4 space-y-4">
+          <!-- Emergency Contacts -->
+          <div class="bg-slate-800 rounded-lg p-4 border border-slate-700">
+            <h3 class="text-lg font-semibold text-slate-100 mb-4">
+              Emergency Contacts
+            </h3>
+
+            <div class="space-y-3">
+              <div
+                class="flex items-center justify-between p-3 bg-slate-900 rounded-lg"
+              >
+                <div class="flex items-center space-x-3">
+                  <div
+                    class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-4 h-4 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-medium text-slate-200">
+                      Emergency Services
+                    </div>
+                    <div class="text-xs text-slate-400">911</div>
+                  </div>
+                </div>
+                <button
+                  title="button"
+                  type="button"
+                  class="bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-1 rounded transition-colors"
+                >
+                  Call
+                </button>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-3 bg-slate-900 rounded-lg"
+              >
+                <div class="flex items-center space-x-3">
+                  <div
+                    class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-4 h-4 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-medium text-slate-200">
+                      Security Control
+                    </div>
+                    <div class="text-xs text-slate-400">(555) 123-4567</div>
+                  </div>
+                </div>
+                <button
+                  title="button"
+                  type="button"
+                  class="bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1 rounded transition-colors"
+                >
+                  Call
+                </button>
+              </div>
+
+              <div
+                class="flex items-center justify-between p-3 bg-slate-900 rounded-lg"
+              >
+                <div class="flex items-center space-x-3">
+                  <div
+                    class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-4 h-4 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-sm font-medium text-slate-200">
+                      Medical Emergency
+                    </div>
+                    <div class="text-xs text-slate-400">(555) 987-6543</div>
+                  </div>
+                </div>
+                <button
+                  title="button"
+                  type="button"
+                  class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3 py-1 rounded transition-colors"
+                >
+                  Call
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Available Resources -->
+          <div class="bg-slate-800 rounded-lg p-4 border border-slate-700">
+            <h3 class="text-lg font-semibold text-slate-100 mb-4">
+              Available Resources
+            </h3>
+
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-slate-300">Response Units</span>
+                <div class="flex items-center space-x-2">
+                  <span class="text-lg font-semibold text-emerald-400">8</span>
+                  <span class="text-xs text-slate-400">/ 12</span>
+                </div>
+              </div>
+              <div class="w-full bg-slate-700 rounded-full h-2">
+                <div
+                  class="bg-emerald-500 h-2 rounded-full"
+                  style="width: 67%"
+                ></div>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-slate-300">Medical Teams</span>
+                <div class="flex items-center space-x-2">
+                  <span class="text-lg font-semibold text-blue-400">3</span>
+                  <span class="text-xs text-slate-400">/ 4</span>
+                </div>
+              </div>
+              <div class="w-full bg-slate-700 rounded-full h-2">
+                <div
+                  class="bg-blue-500 h-2 rounded-full"
+                  style="width: 75%"
+                ></div>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-slate-300"
+                  >Communication Channels</span
+                >
+                <div class="flex items-center space-x-2">
+                  <span class="text-lg font-semibold text-emerald-400">5</span>
+                  <span class="text-xs text-slate-400">/ 5</span>
+                </div>
+              </div>
+              <div class="w-full bg-slate-700 rounded-full h-2">
+                <div
+                  class="bg-emerald-500 h-2 rounded-full"
+                  style="width: 100%"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Communication Status -->
+          <div class="bg-slate-800 rounded-lg p-4 border border-slate-700">
+            <h3 class="text-lg font-semibold text-slate-100 mb-4">
+              Communication Status
+            </h3>
+
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-slate-300">Radio Network</span>
+                <div class="flex items-center space-x-2">
+                  <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                  <span class="text-sm text-emerald-400">Online</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-slate-300">Satellite Link</span>
+                <div class="flex items-center space-x-2">
+                  <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                  <span class="text-sm text-emerald-400">Connected</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-slate-300">Emergency Broadcast</span>
+                <div class="flex items-center space-x-2">
+                  <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                  <span class="text-sm text-emerald-400">Ready</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-slate-300">Mobile Network</span>
+                <div class="flex items-center space-x-2">
+                  <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                  <span class="text-sm text-amber-400">Limited</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Full-Width Coordination Panel -->
+      <section class="mt-6">
+        <div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-lg font-semibold text-slate-100">
+              Emergency Coordination Panel
+            </h3>
+            <div class="flex items-center space-x-4">
+              <div class="text-sm text-slate-400">
+                Response Level:
+                <span class="text-emerald-400 font-medium">Normal</span>
+              </div>
+              <button
+                title="button"
+                type="button"
+                class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-4 py-2 rounded-md transition-colors"
+              >
+                Escalate Protocol
+              </button>
+            </div>
+          </div>
+
+          <!-- Control Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Incident Severity Controls -->
+            <div class="bg-slate-900 rounded-lg p-4">
+              <h4 class="text-sm font-semibold text-slate-200 mb-3">
+                Severity Controls
+              </h4>
+              <div class="space-y-2">
+                <button
+                  title="button"
+                  type="button"
+                  class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-sm py-2 px-3 rounded transition-colors"
+                >
+                  Level 1 - Normal
+                </button>
+                <button
+                  title="button"
+                  type="button"
+                  class="w-full bg-amber-600 hover:bg-amber-700 text-white text-sm py-2 px-3 rounded transition-colors"
+                >
+                  Level 2 - Alert
+                </button>
+                <button
+                  title="button"
+                  type="button"
+                  class="w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded transition-colors"
+                >
+                  Level 3 - Critical
+                </button>
+              </div>
+            </div>
+
+            <!-- Resource Dispatch -->
+            <div class="bg-slate-900 rounded-lg p-4">
+              <h4 class="text-sm font-semibold text-slate-200 mb-3">
+                Resource Dispatch
+              </h4>
+              <div class="space-y-2">
+                <button
+                  title="button"
+                  type="button"
+                  class="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm py-2 px-3 rounded transition-colors"
+                >
+                  Deploy Unit R-01
+                </button>
+                <button
+                  title="button"
+                  type="button"
+                  class="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm py-2 px-3 rounded transition-colors"
+                >
+                  Medical Team
+                </button>
+                <button
+                  title="button"
+                  type="button"
+                  class="w-full bg-purple-600 hover:bg-purple-700 text-white text-sm py-2 px-3 rounded transition-colors"
+                >
+                  Backup Support
+                </button>
+              </div>
+            </div>
+
+            <!-- Communication Controls -->
+            <div class="bg-slate-900 rounded-lg p-4">
+              <h4 class="text-sm font-semibold text-slate-200 mb-3">
+                Communications
+              </h4>
+              <div class="space-y-2">
+                <button
+                  title="button"
+                  type="button"
+                  class="w-full bg-green-600 hover:bg-green-700 text-white text-sm py-2 px-3 rounded transition-colors"
+                >
+                  All Units Radio
+                </button>
+                <button
+                  title="button"
+                  type="button"
+                  class="w-full bg-orange-600 hover:bg-orange-700 text-white text-sm py-2 px-3 rounded transition-colors"
+                >
+                  Public Alert
+                </button>
+                <button
+                  title="button"
+                  type="button"
+                  class="w-full bg-indigo-600 hover:bg-indigo-700 text-white text-sm py-2 px-3 rounded transition-colors"
+                >
+                  Command Center
+                </button>
+              </div>
+            </div>
+
+            <!-- Multi-Location Status -->
+            <div class="bg-slate-900 rounded-lg p-4">
+              <h4 class="text-sm font-semibold text-slate-200 mb-3">
+                Location Status
+              </h4>
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-slate-400">Downtown</span>
+                  <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-slate-400">North District</span>
+                  <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-slate-400">Central Plaza</span>
+                  <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-slate-400">University</span>
+                  <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- JavaScript for Real-time Updates -->
+    <script>
+      // Simulate real-time updates
+      function updateEmergencyDashboard() {
+        // Update timestamp
+        const now = new Date();
+        document.getElementById("lastUpdateTime").textContent =
+          now.toLocaleTimeString();
+
+        // Simulate coordinate updates
+        const baseLat = 40.7128;
+        const baseLng = -74.006;
+        const latVariation = (Math.random() - 0.5) * 0.01;
+        const lngVariation = (Math.random() - 0.5) * 0.01;
+
+        document.getElementById("currentLat").textContent = (
+          baseLat + latVariation
+        ).toFixed(4);
+        document.getElementById("currentLng").textContent = (
+          baseLng + lngVariation
+        ).toFixed(4);
+
+        // Update active incidents (usually 0 for normal operations)
+        const incidents =
+          Math.random() < 0.95 ? 0 : Math.floor(Math.random() * 3);
+        document.getElementById("activeIncidents").textContent = incidents;
+
+        // Update response teams availability
+        const teams = Math.floor(Math.random() * 3) + 6; // 6-8 teams
+        document.getElementById("responseTeams").textContent = teams;
+      }
+
+      // Update dashboard every 10 seconds
+      setInterval(updateEmergencyDashboard, 10000);
+
+      // Initial update
+      updateEmergencyDashboard();
+
+      // Add click handlers for emergency controls
+      document.addEventListener("DOMContentLoaded", function () {
+        // Emergency broadcast button
+        const broadcastBtn = document.querySelector(
+          'button:contains("Emergency Broadcast")'
+        );
+
+        // Severity level buttons
+        const severityButtons = document.querySelectorAll(
+          '[class*="bg-emerald-600"], [class*="bg-amber-600"], [class*="bg-red-600"]'
+        );
+        severityButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Remove active state from all buttons
+            severityButtons.forEach((btn) => {
+              btn.classList.remove("ring-2", "ring-white");
+            });
+            // Add active state to clicked button
+            this.classList.add("ring-2", "ring-white");
+          });
+        });
+
+        // Resource dispatch buttons
+        const dispatchButtons = document.querySelectorAll(
+          '[class*="bg-blue-600"], [class*="bg-purple-600"]'
+        );
+        dispatchButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const originalText = this.textContent;
+            this.textContent = "Dispatching...";
+            this.disabled = true;
+
+            setTimeout(() => {
+              this.textContent = "Dispatched ✓";
+              this.classList.remove(
+                "bg-blue-600",
+                "hover:bg-blue-700",
+                "bg-purple-600",
+                "hover:bg-purple-700"
+              );
+              this.classList.add("bg-emerald-600", "hover:bg-emerald-700");
+
+              setTimeout(() => {
+                this.textContent = originalText;
+                this.disabled = false;
+                this.classList.remove("bg-emerald-600", "hover:bg-emerald-700");
+                if (originalText.includes("Medical")) {
+                  this.classList.add("bg-blue-600", "hover:bg-blue-700");
+                } else {
+                  this.classList.add("bg-purple-600", "hover:bg-purple-700");
+                }
+              }, 3000);
+            }, 2000);
+          });
+        });
+      });
+    </script>
+    <script
+      id="dhws-dataInjector"
+      src="../public/dhws-data-injector.js"
+    ></script>
+  </body>
+</html>
